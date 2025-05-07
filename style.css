@@ -1,0 +1,194 @@
+/* General reset and background */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background: linear-gradient(to right, rgb(35, 15, 15), rgb(137, 11, 11));
+    background-size: 200% 100%;
+    animation: move 5s linear infinite;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background animation */
+@keyframes move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Hamburger icon */
+.menu-toggle {
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    background: rgb(65, 16, 16);
+    border-bottom: 2px solid rgb(103, 59, 59);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100; /* Keeps the toggle above other elements */
+    width: 100%;
+}
+
+/* Navigation bar (hidden by default) */
+#nav {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    height: 100vh; /* Full height */
+    width: 250px;
+    background: rgb(65, 16, 16);
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid rgb(103, 59, 59);
+    transform: translateX(-100%); /* Hidden by default */
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Show nav when toggled */
+#nav.show {
+    transform: translateX(0); /* Slide in when shown */
+}
+
+/* Navigation list styling */
+#nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+}
+
+#nav ul li {
+    padding: 12px 20px;
+    color: aliceblue;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid rgb(103, 59, 59);
+    cursor: pointer;
+}
+
+/* Hover effect on navigation items */
+#nav ul li:hover {
+    background-color: rgb(103, 59, 59);
+}
+
+/* Style for active menu item */
+#nav ul li.active {
+    background-color: rgb(103, 59, 59);
+}
+
+#cont {
+    color: aliceblue;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Adjust height to fit the content */
+    padding: 20px; /* Added padding for spacing */
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 40px;
+    max-width: 900px; /* Max width to keep text readable */
+    padding: 15px;
+}
+
+h1, h2 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #d1d1d1;
+    line-height: 1.6;
+}
+
+/* List styling */
+ol, ul {
+    font-size: 1.1rem;
+    color: #d1d1d1;
+    margin-left: 20px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    background-color: rgb(103, 59, 59);
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(65, 16, 16);
+}
+
+/* Form Styling */
+form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    resize: vertical;
+}
+
+form textarea {
+    height: 100px;
+}
+
+form button[type="submit"] {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: crimson;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: darkred;
+}
