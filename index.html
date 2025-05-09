@@ -47,10 +47,7 @@
         <section>
             <div>
                 <h2>Fill This Form To Get Blood</h2>
-                <?php
-                $showForm = false; // Change to true if you want to show the form
-
-                if ($showForm): ?>
+            
                     <form action="https://formspree.io/f/mwpobvdg" method="POST">
                         <label for="email">Your email:</label>
                         <input type="email" name="email" id="email" required>
@@ -60,9 +57,7 @@
 
                         <button type="submit" class="btn">Send</button>
                     </form>
-                <?php else: ?>
-                    <p class="hidden">Form is currently unavailable.</p>
-                <?php endif; ?>
+            
             </div>
         </section>
 

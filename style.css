@@ -24,7 +24,7 @@ body {
 .menu-toggle {
     font-size: 30px;
     color: white;
-    padding: 20px;
+    padding: 40px;
     cursor: pointer;
     background: rgb(65, 16, 16);
     border-bottom: 2px solid rgb(103, 59, 59);
@@ -107,13 +107,13 @@ section {
 }
 
 h1, h2 {
-    font-size: 3rem;
+    font-size: 3em;
     color: white;
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 2em;
     color: #d1d1d1;
     line-height: 1.6;
 }
@@ -191,4 +191,29 @@ form button[type="submit"] {
 
 form button[type="submit"]:hover {
     background-color: darkred;
+}
+
+/* Mobile Responsive Adjustments */
+@media only screen and (max-width: 600px) {
+    body {
+        background: #000 !important; /* Black background on mobile */
+        animation: none !important;   /* Stop animation on mobile */
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    p, ol, ul {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        padding: 20px;
+        font-size: 24px;
+    }
+
+    #nav {
+        width: 200px;
+    }
 }
