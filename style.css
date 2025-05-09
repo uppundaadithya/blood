@@ -1,93 +1,71 @@
-/* General reset and background */
+/* Basic Reset */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
+/* Background and Animation */
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif; /* Materialize's default font */
     background: linear-gradient(to right, rgb(35, 15, 15), rgb(137, 11, 11));
-    background-size: 200% 100%;
+    background-size:150% 100%;
     animation: move 5s linear infinite;
+    color: #fff;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    transition:ease-in 0.7s;
+  
+   
 }
 
-/* Background animation */
+
+/* Background Animation */
 @keyframes move {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
 
-/* Hamburger icon */
-.menu-toggle {
-    font-size: 30px;
+/* Menu Toggle */
+.cl {
+    font-size: 2.5rem;
     color: white;
-    padding: 40px;
+    padding: 20px;
     cursor: pointer;
     background: rgb(65, 16, 16);
     border-bottom: 2px solid rgb(103, 59, 59);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1100; /* Keeps the toggle above other elements */
+    z-index: 1010;
     width: 100%;
-}
-
-/* Navigation bar (hidden by default) */
-#nav {
-    position: fixed;
-    top: 90px;
-    left: 0;
-    height: 100vh; /* Full height */
-    width: 250px;
-    background: rgb(65, 16, 16);
-    flex-direction: column;
-    align-items: center;
-    border-right: 2px solid rgb(103, 59, 59);
-    transform: translateX(-100%); /* Hidden by default */
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-    z-index: 1000;
-}
-
-/* Show nav when toggled */
-#nav.show {
-    transform: translateX(0); /* Slide in when shown */
-}
-
-/* Navigation list styling */
-#nav ul {
     display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+}
+   
+#search{
+    box-sizing: border-box;
+    color: #fff;
+    width: fit-content;
+
+}
+#s-box{
+    height: 70px;
+    width:250px;
+   background: linear-gradient(to right,rgb(41, 15, 15),rgb(81, 0, 0));
+    display: flex;
+    justify-content: center;
     align-items: center;
-    height: 100%;
+    border-radius: 20px;
 }
 
-#nav ul li {
-    padding: 12px 20px;
-    color: aliceblue;
-    text-align: center;
-    width: 100%;
-    border-top: 1px solid rgb(103, 59, 59);
-    cursor: pointer;
+#name {
+    font-size: 2rem;
+    margin-left: 15px;
 }
 
-/* Hover effect on navigation items */
-#nav ul li:hover {
-    background-color: rgb(103, 59, 59);
-}
-
-/* Style for active menu item */
-#nav ul li.active {
-    background-color: rgb(103, 59, 59);
-}
-
+/* Content Wrapper */
 #cont {
     color: aliceblue;
     margin-top: 90px;
@@ -95,31 +73,40 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: auto; /* Adjust height to fit the content */
-    padding: 20px; /* Added padding for spacing */
+    height: auto;
+    padding: 20px;
 }
-
-/* Section Styling */
+#mobile-nav{
+    background: linear-gradient(to top,rgb(72, 13, 13),rgb(132, 5, 5));
+    font-size: larger;
+    margin-top: 60px;
+}
+#mobile-nav li a {
+    font-size: 1.4em;
+}
+/* Sections */
 section {
     margin-bottom: 40px;
-    max-width: 900px; /* Max width to keep text readable */
+    max-width: 900px;
     padding: 15px;
 }
 
+
 h1, h2 {
-    font-size: 3em;
+    font-size: 3rem;
     color: white;
-    margin-bottom: 10px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 p {
-    font-size: 2em;
+    font-size: 1.25rem;
     color: #d1d1d1;
     line-height: 1.6;
 }
 
-/* List styling */
-ol, ul {
+ul {
     font-size: 1.1rem;
     color: #d1d1d1;
     margin-left: 20px;
@@ -130,12 +117,12 @@ ol, ul {
     display: inline-block;
     background-color: rgb(103, 59, 59);
     color: white;
-    padding: 12px 25px;
     font-size: 1.2rem;
     text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 .btn:hover {
@@ -144,13 +131,26 @@ ol, ul {
 
 /* Form Styling */
 form {
-    max-width: 500px;
+    
     margin: 40px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.578) 0px 30px 90px;
     font-family: Arial, sans-serif;
+    max-width: 95%;
+    height: auto;
+    transition: ease-in-out 0.6s;
+    width: auto;
+   
+}
+
+
+form:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(203, 197, 197, 0.6) 0px 40px 90px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
 }
 
 form label {
@@ -172,13 +172,11 @@ form textarea {
     resize: vertical;
 }
 
-form textarea {
-    height: 100px;
-}
-
 form button[type="submit"] {
     display: inline-block;
-    padding: 12px 24px;
+    height: 40px;
+    width: 100px;
+    text-align: center;
     background-color: crimson;
     color: #fff;
     border: none;
@@ -186,33 +184,106 @@ form button[type="submit"] {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin-top: 10px;
+    margin-top: 170px;
+    padding: 10px 20px; /* Adjusted padding for better spacing */
+    margin-bottom: 10px;
+    bottom: 0%;
+}
+  #form .input-field label {
+        font-size: 1.5em;
+    }
+form button[type="submit"]:hover {
+    background-color: darkred;
 }
 
 form button[type="submit"]:hover {
     background-color: darkred;
 }
+#form{
+   max-width: 100%;
+}
+#bloodGroup {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #333;
+}
 
-/* Mobile Responsive Adjustments */
-@media only screen and (max-width: 600px) {
+select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+}
+
+select:focus {
+  border-color: #e53935;
+  outline: none;
+  box-shadow: 0 0 5px rgba(229, 57, 53, 0.4);
+}
+
+select option {
+  padding: 8px;
+  font-size: 16px;
+}
+
+
+.blood-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    font-size: 2rem;
+    padding: 26px 0;
+    margin: 15px 5;
+}
+
+.blood-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
+    background-color: #b71c1c;
+}
+.count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 700px) {
     body {
+<<<<<<< Updated upstream
      /* Stop animation on mobile */
+=======
+        max-height: 100%;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+>>>>>>> Stashed changes
     }
 
     h1, h2 {
+        font-size: 5rem;
+    }
+
+    p, ul , label {
         font-size: 2rem;
     }
 
-    p, ol, ul {
-        font-size: 1rem;
-    }
-
     .menu-toggle {
-        padding: 20px;
-        font-size: 24px;
+        padding: 15px;
+        font-size: 2.4rem;
     }
 
-    #nav {
-        width: 200px;
+    .sidenav {
+        width: 60%;
+        font-size: 3rem;
+    }
+
+    #form label{
+        font-size: medium;
     }
 }
