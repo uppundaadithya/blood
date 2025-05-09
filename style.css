@@ -196,8 +196,7 @@ form button[type="submit"]:hover {
 /* Mobile Responsive Adjustments */
 @media only screen and (max-width: 600px) {
     body {
-        background: #000 !important; /* Black background on mobile */
-        animation: none !important;   /* Stop animation on mobile */
+     /* Stop animation on mobile */
     }
 
     h1, h2 {
