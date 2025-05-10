@@ -21,7 +21,7 @@ body {
 /* Background Animation */
 @keyframes move {
     0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    100% { background-position: 100% 100%; }
 }
 
 /* Menu Toggle */
