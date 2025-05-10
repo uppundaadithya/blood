@@ -9,17 +9,14 @@ html, body {
 body {
     font-family: 'Roboto', sans-serif; /* Materialize's default font */
     background: linear-gradient(to right, rgb(35, 15, 15), rgb(137, 11, 11));
-    background-size:150% 100%;
+    background-size: 150% 100%;
     animation: move 5s linear infinite;
     color: #fff;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    transition:ease-in 0.7s;
-  
-   
+    transition: ease-in 0.7s;
 }
-
 
 /* Background Animation */
 @keyframes move {
@@ -43,17 +40,16 @@ body {
     display: flex;
     flex-direction: row;
 }
-   
-#search{
+
+#search {
     box-sizing: border-box;
     color: #fff;
     width: fit-content;
-
 }
-#s-box{
+#s-box {
     height: 70px;
-    width:250px;
-   background: linear-gradient(to right,rgb(41, 15, 15),rgb(81, 0, 0));
+    width: 250px;
+    background: linear-gradient(to right, rgb(41, 15, 15), rgb(81, 0, 0));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,14 +72,16 @@ body {
     height: auto;
     padding: 20px;
 }
-#mobile-nav{
-    background: linear-gradient(to top,rgb(72, 13, 13),rgb(132, 5, 5));
+#mobile-nav {
+    background: linear-gradient(to top, rgb(72, 13, 13), rgb(132, 5, 5));
     font-size: larger;
     margin-top: 60px;
 }
 #mobile-nav li a {
     font-size: 1.4em;
+    color: aliceblue;
 }
+
 /* Sections */
 section {
     margin-bottom: 40px;
@@ -91,13 +89,11 @@ section {
     padding: 15px;
 }
 
-
 h1, h2 {
     font-size: 3rem;
     color: white;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
-
 }
 
 p {
@@ -131,21 +127,19 @@ ul {
 
 /* Form Styling */
 form {
-    
     margin: 40px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.578) 0px 30px 90px;
     font-family: Arial, sans-serif;
-    max-width: 95%;
-    height: auto;
+    max-width: 100%;
+    width: 100%;
     transition: ease-in-out 0.6s;
-    width: auto;
-   
+    margin-left:auto ;
 }
 
-
+/* Form Hover Effect */
 form:hover {
     transform: scale(1.02);
     box-shadow: rgba(203, 197, 197, 0.6) 0px 40px 90px;
@@ -160,8 +154,10 @@ form label {
     color: #333;
 }
 
+/* Form Inputs */
 form input[type="email"],
-form textarea {
+form textarea,
+form select {
     width: 100%;
     padding: 12px 15px;
     margin-top: 6px;
@@ -172,10 +168,11 @@ form textarea {
     resize: vertical;
 }
 
+/* Submit Button */
 form button[type="submit"] {
     display: inline-block;
     height: 40px;
-    width: 100px;
+    width: 100%; /* Full width */
     text-align: center;
     background-color: crimson;
     color: #fff;
@@ -184,55 +181,49 @@ form button[type="submit"] {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
-    margin-top: 170px;
-    padding: 10px 20px; /* Adjusted padding for better spacing */
-    margin-bottom: 10px;
-    bottom: 0%;
+    margin-top: 20px;
+    padding: 10px 20px; /* Adjust padding */
 }
-  #form .input-field label {
-        font-size: 1.5em;
+
+form button[type="submit"]:hover {
+    background-color: darkred;
+}
+
+/* Mobile-specific adjustments */
+@media only screen and (max-width: 700px) {
+    form {
+        margin: 20px 10px; /* Adjust margins on mobile */
+        padding: 15px;
     }
-form button[type="submit"]:hover {
-    background-color: darkred;
+
+    form input[type="email"],
+    form textarea,
+    form select,
+    form button[type="submit"] {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+
+    form button[type="submit"] {
+        width: 100%; /* Make submit button full width */
+        margin-top: 20px; /* Ensure proper spacing */
+    }
+
+    form label {
+        font-size: 1.2rem; /* Adjust label size on mobile */
+    }
 }
 
-form button[type="submit"]:hover {
-    background-color: darkred;
+/* Not Found Styling */
+#notFound {
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+    margin-top: 100px;
 }
-#form{
-   max-width: 100%;
-}
-#bloodGroup {
-  display: block;
-  margin-top: 12px;
-  font-weight: 600;
-  color: #333;
-}
-
-select {
-  width: 100%;
-  padding: 10px 12px;
-  margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
-  font-size: 16px;
-  color: #333;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-  appearance: none;
-}
-
-select:focus {
-  border-color: #e53935;
-  outline: none;
-  box-shadow: 0 0 5px rgba(229, 57, 53, 0.4);
-}
-
-select option {
-  padding: 8px;
-  font-size: 16px;
-}
-
 
 .blood-box {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -247,43 +238,95 @@ select option {
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
     background-color: #b71c1c;
 }
+
 .count {
     font-size: 2.5rem;
     font-weight: bold;
     display: block;
     margin-top: 10px;
 }
+
+footer {
+  background:linear-gradient(to right,rgb(98, 4, 4,0.2) , rgb(134, 17, 17)); /* Dark background */
+  color: #f9fafb;            /* Light text */
+  text-align: left;
+  padding: 4px 20px;
+  width:100%;
+  padding-bottom:10px;
+}
+
+footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+footer #btn {
+  display: inline-block;
+  background-color: #ef4444; /* Tailwind-style red */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  height:40px ;
+
+}
+
+footer .btn:hover {
+  background-color: #dc2626; /* Darker red on hover */
+}
+
 @media only screen and (max-width: 700px) {
     body {
-<<<<<<< Updated upstream
-     /* Stop animation on mobile */
-=======
-        max-height: 100%;
-        justify-content: center;
-        align-items: center;
-        width: auto;
->>>>>>> Stashed changes
-    }
+        h1, h2 {
+            font-size: 5rem;
+        }
 
-    h1, h2 {
-        font-size: 5rem;
-    }
+        p, ul, label {
+            font-size: 2rem;
+        }
 
-    p, ul , label {
-        font-size: 2rem;
-    }
+        .menu-toggle {
+            padding: 15px;
+            font-size: 2.4rem;
+        }
 
-    .menu-toggle {
-        padding: 15px;
-        font-size: 2.4rem;
-    }
+        .sidenav {
+            width: 60%;
+            font-size: 3rem;
+        }
+        #form{
+            justify-content: center;
+            align-items: center;
+            margin-left: -20px;
+        }
 
-    .sidenav {
-        width: 60%;
-        font-size: 3rem;
-    }
-
-    #form label{
-        font-size: medium;
-    }
+        #form label {
+            font-size: medium;
+        }
+        .blood-box {
+         
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 20px;
+            font-size: 2rem;
+            padding: 2px 0;
+            margin: 1px 5;
+        }
+       footer h2 {
+            font-size: 2rem;
+        } 
+         footer p{
+            font-size: 1rem;
+         }
+    }   
+       
 }

@@ -1,272 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Toggle</title>
-    <link rel="icon" href="logo.jpg" type="image/x-icon" />
-    
-    <!-- Materialize CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    
-    <!-- Your custom styles (if any) -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navigation Toggle</title>
+  <link rel="icon" href="logo.jpg" type="image/x-icon" />
+
+  <!-- Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Hamburger Menu Icon -->
-    <div class="cl">
-        <span id="but" class="sidenav-trigger" data-target="mobile-nav">&#9776;</span>
-        <span id="name">BLOOD</span>
-        
-   </div>
+  <!-- Hamburger Menu -->
+  <div class="cl">
+    <span id="but" class="sidenav-trigger" data-target="mobile-nav">&#9776;</span>
+    <span id="name">BLOOD</span>
+  </div>
 
-    <!-- Navigation Menu -->
-    <ul id="mobile-nav" class="sidenav">
-        <li><a href="#!">Menu</a></li>
-        <li><a href="#!">Service</a></li>
-        <li><a href="#!">Contact</a></li>
-        <li><a href="#!">About</a></li>
-    </ul>
+  <!-- Side Nav -->
+  <ul id="mobile-nav" class="sidenav">
+    <li><a href="#!">Menu</a></li>
+    <li><a href="#!">Service</a></li>
+    <li><a href="#!">Contact</a></li>
+    <li><a href="#!">About</a></li>
+  </ul>
 
-    <div id="cont">
-        <div id="s-box">
-            <input id="search" type="text" onkeyup="searchContent()" placeholder="Search" /></div>
-        <section>
-           <h2>Need Blood? We're Here to Help!</h2>
-                    <p>
-                        If you or a loved one needs blood, we connect donors with patients to ensure a safe and quick process. Get blood when you need it most.
-                    </p>
-        </section>
-
-        <section>
-            <h2>Why Donate?</h2>
-            <p>
-                Your donation can save up to three lives. Blood is always in demand, and your help ensures a steady supply for medical treatments.
-            </p>
-        </section>
-
-<section>
-    <h2> Select Blood Group</h2>
-    <div class="row" id="blood-groups">
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    A+<br>
-                    <span class="count" data-target="25">0</span> units
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    A-<br>
-                    <span class="count" data-target="18">0</span> units
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    B+<br>
-                    <span class="count" data-target="30">0</span> units
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    B-<br>
-                    <span class="count" data-target="10">0</span> units
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    AB+<br>
-                    <span class="count" data-target="15">0</span> units
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    AB-<br>
-                    <span class="count" data-target="8">0</span> units
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    O+<br>
-                    <span class="count" data-target="40">0</span> units
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6">
-            <div class="card red darken-2 white-text center-align blood-box">
-                <div class="card-content">
-                    O-<br>
-                    <span class="count" data-target="5">0</span> units
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-        
-        <section id="form">
-            <h2>Fill This Form To Get Blood</h2>
-            <form action="https://formspree.io/f/mwpobvdg" method="POST">
-              <label for="name">Patient Name</label>
-      <input type="text" id="name" name="name" style="text-transform: uppercase;" required>
-
-      <label for="bloodGroup">Blood Group : </label>
-      <select id="bloodGroup" name="bloodGroup" style="margin: 5px;" required>
-        <option value="">-- Select Blood Group --</option>
-        <option value="A+">A+</option>
-        <option value="A-">A−</option>
-        <option value="B+">B+</option>
-        <option value="B-">B−</option>
-        <option value="AB+">AB+</option>
-        <option value="AB-">AB−</option>
-        <option value="O+">O+</option>
-        <option value="O-">O−</option>
-      </select>
-
-      <label for="units">Required Units</label>
-      <input type="number" id="units" name="units" min="1" required>
-
-      <label for="hospital">Hospital Name</label>
-      <input type="text" id="hospital" name="hospital" required>
-
-      <label for="location">Hospital Location</label>
-      <input type="text" id="location" name="location" required>
-
-      <label for="contact">Contact Number</label>
-      <input type="tel" id="contact" name="contact" required>
-
-      <label for="message">Additional Information</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-
-                <button type="submit">Send</button>
-            </form>
-        </section>
-
-        <section>
-            <h2>FAQs</h2>
-            <ul>
-                <section>
-                 
-                
-                    <div>
-                        <h3>How It Works</h3>
-                        <ul>
-                            <li><strong>Step 1: Request Blood</strong> - Fill out a quick form with your contact details and blood type.</li>
-                            <li><strong>Step 2: Connect</strong> - We find a match with our donor network.</li>
-                            <li><strong>Step 3: Delivery</strong> - Blood is delivered to your location or medical facility.</li>
-                            <li><strong>Step 4: Support</strong> - We ensure ongoing support for your needs.</li>
-                        </ul>
-                    </div>
-                
-                    <div>
-                        <h3>Need Help? Contact Us</h3>
-                        <p>
-                            We're available 24/7 to assist you. Reach out for any urgent requests.
-                        </p>
-                        <a href="contact.html">Contact Now</a>
-                    </div>
-                </section>
-                
-            </ul>
-        </section>
-
-        <section>
-            <h2>Get Involved</h2>
-            <p>
-                Join our community, become a regular donor, and help save lives.
-            </p>
-            <a href="contact.html" class="btn">Contact Us</a>
-        </section>
+  <div id="cont">
+    <div id="s-box">
+      <input id="search" type="text" onkeyup="searchContent()" placeholder="Search"/>
     </div>
 
- 
+    <section>
+      <h2>Need Blood? We're Here to Help!</h2>
+      <p>If you or a loved one needs blood, we connect donors with patients to ensure a safe and quick process. Get blood when you need it most.</p>
+    </section>
+
+    <section>
+      <h2>Why Donate?</h2>
+      <p>Your donation can save up to three lives. Blood is always in demand, and your help ensures a steady supply for medical treatments.</p>
+    </section>
+
+    <section>
+      <h2 style="text-align: center;">Units available</h2>
+      <div class="row" id="blood-groups">
+        <!-- Blood boxes -->
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">A+<br><span class="count" data-target="25">0</span> units</div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">A-<br><span class="count" data-target="18">0</span> units</div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">B+<br><span class="count" data-target="30">0</span> units</div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">B-<br><span class="count" data-target="10">0</span> units</div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">AB+<br><span class="count" data-target="15">0</span> units</div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">AB-<br><span class="count" data-target="8">0</span> units</div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">O+<br><span class="count" data-target="40">0</span> units</div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card red darken-2 white-text center-align blood-box blood">
+            <div class="card-content">O-<br><span class="count" data-target="5">0</span> units</div>
+          </div>
+        </div>
+      </div>
+         </section>
+ <p id="notFound" style="display:none; color: rgb(255, 255, 255); text-align: center; font-size: 1.5rem;">No matching blood group found.</p>
+
+    <section id="form">
+      <h2>Fill This Form To Get Blood</h2>
+      <form action="https://formspree.io/f/mwpobvdg" method="POST">
+        <label for="name">Patient Name</label>
+        <input type="text" id="name" name="name" style="text-transform: uppercase;" required>
+
+        <label for="bloodGroup">Blood Group:</label>
+        <select id="bloodGroup" name="bloodGroup" required>
+          <option value="">-- Select Blood Group --</option>
+          <option value="A+">A+</option>
+          <option value="A-">A−</option>
+          <option value="B+">B+</option>
+          <option value="B-">B−</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB−</option>
+          <option value="O+">O+</option>
+          <option value="O-">O−</option>
+        </select>
+
+        <label for="units">Required Units</label>
+        <input type="number" id="units" name="units" min="1" required>
+
+        <label for="hospital">Hospital Name</label>
+        <input type="text" id="hospital" name="hospital" required>
+
+        <label for="location">Hospital Location</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" required>
+
+        <label for="message">Additional Information</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>FAQs</h2>
+      <div>
+        <h3>Need Help?</h3>
+        <p>We're available 24/7 for urgent requests.</p>
+        <a href="contact.html">Contact Now</a>
+      </div>
+    </section>
+
+  
+  </div>
+  <footer>
+      <h2>Get Involved</h2>
+      <p>Join our community and become a regular donor.</p>
+      <a href="contact.html" id="btn">Contact Us</a>
+    </footer>
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <script>
-    // Materialize side nav
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(elems);
+  document.addEventListener('DOMContentLoaded', function () {
+    // Sidenav init
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
+
+    // Counter animation
+    const counters = document.querySelectorAll('.count');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = Math.ceil(target / 50);
+        if (current < target) {
+          counter.innerText = Math.min(current + increment, target);
+          setTimeout(updateCount, 40);
+        }
+      };
+      updateCount();
     });
 
-   document.addEventListener('DOMContentLoaded', function () {
-  // Initialize sidenav
-  var elems = document.querySelectorAll('.sidenav');
-  M.Sidenav.init(elems);
+    // PDF + Form submission
+    const { jsPDF } = window.jspdf;
+    const form = document.querySelector("form");
 
-  // Counter animation
-  const counters = document.querySelectorAll('.count');
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const current = +counter.innerText;
-      const increment = Math.ceil(target / 50);
-      if (current < target) {
-        counter.innerText = Math.min(current + increment, target);
-        setTimeout(updateCount, 40);
-      }
-    };
-    updateCount();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const doc = new jsPDF();
+      const now = new Date();
+
+      const name = document.getElementById("name").value;
+      const bloodGroup = document.getElementById("bloodGroup").value;
+      const units = document.getElementById("units").value;
+      const hospital = document.getElementById("hospital").value;
+      const location = document.getElementById("location").value;
+      const contact = document.getElementById("contact").value;
+      const message = document.getElementById("message").value;
+
+      doc.setFontSize(16);
+      doc.text("Blood Request Form", 20, 20);
+      doc.setFontSize(12);
+      doc.text(`Date: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`, 20, 30);
+      doc.text(`Patient Name: ${name}`, 20, 40);
+      doc.text(`Blood Group: ${bloodGroup}`, 20, 50);
+      doc.text(`Required Units: ${units}`, 20, 60);
+      doc.text(`Hospital Name: ${hospital}`, 20, 70);
+      doc.text(`Hospital Location: ${location}`, 20, 80);
+      doc.text(`Contact Number: ${contact}`, 20, 90);
+      doc.text(`Additional Info: ${message}`, 20, 100);
+
+      doc.save("Blood-Request.pdf");
+      setTimeout(() => form.submit(), 500);
+    });
   });
-});
 
+  function searchContent() {
+    let input = document.getElementById('search').value.toLowerCase();
+    let bloodBoxes = document.querySelectorAll('.blood-box');
+    let sections = document.querySelectorAll('section');
+    let found = false;
 
- 
-    // PDF generation and form submission
-    window.onload = () => {
-      const { jsPDF } = window.jspdf;
-      const form = document.querySelector("form");
+    // If search input is empty, show all content
+    if (input === '') {
+      sections.forEach(sec => sec.style.display = 'block');
+      bloodBoxes.forEach(box => box.parentElement.style.display = 'block');
+      const notFoundMessage = document.getElementById('notFound');
+      if (notFoundMessage) {
+        notFoundMessage.style.display = 'none'; // Hide "No matching blood group found"
+      }
+      return; // Exit function early to prevent further processing
+    }
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    // Hide all sections initially
+    sections.forEach(sec => sec.style.display = 'none');
 
-        const doc = new jsPDF();
-        const now = new Date();
+    // Check each blood-box
+    bloodBoxes.forEach(box => {
+      let text = box.innerText.toLowerCase();
+      if (text.includes(input)) {
+        box.parentElement.style.display = 'block'; // Show col
+        box.closest('section').style.display = 'block'; // Show parent section
+        found = true;
+      } else {
+        box.parentElement.style.display = 'none'; // Hide col
+      }
+    });
 
-        // Collect values
-        const name = document.getElementById("name").value;
-        const bloodGroup = document.getElementById("bloodGroup").value;
-        const units = document.getElementById("units").value;
-        const hospital = document.getElementById("hospital").value;
-        const location = document.getElementById("location").value;
-        const contact = document.getElementById("contact").value;
-        const message = document.getElementById("message").value;
+    // Show form if match is found
+    if (found) {
+      document.getElementById('form').style.display = 'block';
+    }
 
-        // Create PDF content
-        doc.setFontSize(16);
-        doc.text("Blood Request Form", 20, 20);
-        doc.setFontSize(12);
-        doc.text(`Date: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`, 20, 30);
-        doc.text(`Patient Name: ${name}`, 20, 40);
-        doc.text(`Blood Group: ${bloodGroup}`, 20, 50);
-        doc.text(`Required Units: ${units}`, 20, 60);
-        doc.text(`Hospital Name: ${hospital}`, 20, 70);
-        doc.text(`Hospital Location: ${location}`, 20, 80);
-        doc.text(`Contact Number: ${contact}`, 20, 90);
-        doc.text(`Additional Info: ${message}`, 20, 100);
+    // Get the 'not found' message element and update its visibility
+    const notFoundMessage = document.getElementById('notFound');
+    if (notFoundMessage) {
+      notFoundMessage.style.display = found ? 'none' : 'block';
+    }
+  }
+</script>
 
-        // Save and then submit form
-        doc.save("Blood-Request.pdf");
-        setTimeout(() => form.submit(), 500); // Slight delay for download
-      });
-    };
-  </script>
 </body>
 </html>
