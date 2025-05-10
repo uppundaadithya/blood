@@ -59,6 +59,7 @@ body {
 #name {
     font-size: 2rem;
     margin-left: 15px;
+    margin-top: 6px;
 }
 
 /* Content Wrapper */
@@ -188,7 +189,9 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: darkred;
 }
-
+#icon{
+    border-radius: 50px;
+}
 /* Mobile-specific adjustments */
 @media only screen and (max-width: 700px) {
     form {
@@ -253,6 +256,7 @@ footer {
   padding: 4px 20px;
   width:100%;
   padding-bottom:10px;
+  padding-left: 100px;
 }
 
 footer h2 {
