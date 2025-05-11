@@ -1,41 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const formHTML = `
-    <h2>Fill This Form To Get Blood</h2>
-    <form action="https://formspree.io/f/mwpobvdg" method="POST">
-      <label for="name">Patient Name</label>
-      <input type="text" id="name" name="name" style="text-transform: uppercase;" required>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 
-      <label for="bloodGroup">Blood Group:</label>
-      <select id="bloodGroup" name="bloodGroup" required>
-        <option value="">-- Select Blood Group --</option>
-        <option value="A+">A+</option>
-        <option value="A-">A−</option>
-        <option value="B+">B+</option>
-        <option value="B-">B−</option>
-        <option value="AB+">AB+</option>
-        <option value="AB-">AB−</option>
-        <option value="O+">O+</option>
-        <option value="O-">O−</option>
-      </select>
+/* Background and Animation */
+body {
+    font-family: 'Roboto', sans-serif; /* Materialize's default font */
+    background: linear-gradient(to right, rgb(35, 15, 15), rgb(137, 11, 11));
+    background-size: 150% 100%;
+    animation: move 5s linear infinite;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: ease-in 0.7s;
+}
 
-      <label for="units">Required Units</label>
-      <input type="number" id="units" name="units" min="1" required>
-
-      <label for="hospital">Hospital Name</label>
-      <input type="text" id="hospital" name="hospital" required>
-
-      <label for="location">Hospital Location</label>
-      <input type="text" id="location" name="location" required>
-
-      <label for="contact">Contact Number</label>
-      <input type="tel" id="contact" name="contact" required>
-
-      <label for="message">Additional Information</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-
-      <button type="submit">Send</button>
-    </form>
-  `;
-
-  document.getElementById('form').innerHTML = formHTML;
-});
+/* Background Animation */
+@keyframes move {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 100%; }
+}
